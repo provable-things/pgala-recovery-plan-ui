@@ -14,7 +14,7 @@ const settings = {
     },
   },
   contracts: {
-    agreement: '0xB2F13303F703138352c695b895148124716Eb769',
+    agreement: '0x7444125E365AEAf974cBAd104d2E6F100DbBAf10',
   },
 }
 

@@ -73,7 +73,7 @@ const AddTokenSpan = styled.span`
 const App = () => {
   const { connect, provider, isConnected, account } = useWalletByBlockchain('BSC')
   const [checked, setChecked] = useState(false)
-  const [claimable, setClaimable] = useState('10')
+  const [claimable, setClaimable] = useState(null)
 
   const onConfirm = useCallback(() => {
     try {
@@ -134,11 +134,20 @@ const App = () => {
     [isConnected, claimable]
   )
 
+  const btnDisabled = useMemo(() => {
+    if (isConnected) {
+      if (BigNumber(claimable).isEqualTo(0)) return true
+      return !checked
+    }
+
+    return false
+  }, [isConnected, claimable, checked])
+
   const onAddToken = useCallback(async () => {
     try {
       await registerToken({
         provider,
-        tokenAddress: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56',
+        tokenAddress: '0x419C44C48Cd346C0b0933ba243BE02af46607c9B',
         tokenSymbol: 'pGALA',
         tokenDecimals: 18,
         tokenImage: null,
@@ -186,10 +195,7 @@ const App = () => {
           </Row>
           <Row>
             <Col className="mt-5 mx-auto" xs={12} lg={6}>
-              <ConnectButton
-                disabled={isConnected ? !checked : false}
-                onClick={() => (isConnected ? onConfirm() : connect())}
-              >
+              <ConnectButton disabled={btnDisabled} onClick={() => (isConnected ? onConfirm() : connect())}>
                 {btnText}
               </ConnectButton>
             </Col>
