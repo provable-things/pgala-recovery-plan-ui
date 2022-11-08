@@ -170,7 +170,7 @@ const App = () => {
           <Row className="mt-2">
             <Col className="mx-auto text-center" xs={12} lg={6}>
               <SubTitle>
-                In order to enroll in the compensation plan please read the declaration below (also available{' '}
+                In order to enroll in the recovery plan please read the declaration below (also available{' '}
                 <a href={settings.terms} target="_blank" rel="noreferrer">
                   here
                 </a>
