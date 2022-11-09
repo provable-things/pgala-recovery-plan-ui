@@ -1,6 +1,6 @@
 const settings = {
-  termsMultiHash: '',
-  terms: 'https://ipfs.io/ipfs/',
+  termsMultiHash: 'QmShGLRoEDbghUWBux6ndGTiBkeoKBrXdR1y1HPGsdkDyv',
+  terms: 'https://ipfs.io/ipfs/QmShGLRoEDbghUWBux6ndGTiBkeoKBrXdR1y1HPGsdkDyv',
   rpc: {
     bsc: {
       endpoint: process.env.REACT_APP_BSC_NODE,
@@ -12,7 +12,7 @@ const settings = {
     },
   },
   contracts: {
-    agreement: '0x1cc1DfFE8252e1c9FC09a8A934b6fC5487369E6f',
+    agreement: '0xA25E11Cb5FB8a114335010a19eb0D3751C376F5a',
   },
 }
 
