@@ -9,7 +9,6 @@ import settings from '../../../settings'
 
 import Header from '../../base/Header'
 import Button from '../..//base/Button'
-import Footer from '../../base/Footer'
 
 const Content = styled.div`
   padding-bottom: 100px;
@@ -117,7 +116,6 @@ const Check = () => {
           )}
         </Container>
       </Content>
-      <Footer />
     </Fragment>
   )
 }

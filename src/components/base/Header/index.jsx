@@ -75,7 +75,6 @@ const Header = (_props) => {
           </Row>
         </ContainerBottomMobile>
       ) : null}
-
       <WalletInfoModal show={showWalletInfo} wallets={[wallet]} onClose={() => setShowWalletInfo(false)} />
     </React.Fragment>
   )

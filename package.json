@@ -60,7 +60,9 @@
     "dotenv": "^10.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.4.1"
+    "node-ssh": "^13.0.0",
+    "prettier": "^2.4.1",
+    "ssh2-sftp-client": "^9.0.4"
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",

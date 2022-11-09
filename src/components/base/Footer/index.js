@@ -21,21 +21,15 @@ const StyledFooter = styled.footer`
   border-top: 1px solid ${({ theme }) => theme.bg2};
 `
 
-const FooterText = styled.span`
-  color: ${({ theme }) => theme.secondary1};
-`
-
-const Footer = ({ withCheck = false }) => (
+const Footer = () => (
   <StyledFooter>
     <Container>
       <Row>
         <Col xs={4} />
         <Col xs={4} className="text-center">
-          <FooterText>© p.network</FooterText>
+          <StyledLink to={'/check'}>Check address details</StyledLink>
         </Col>
-        <Col xs={4} className="text-right">
-          {withCheck && <StyledLink to={'/check'}>Check details...</StyledLink>}
-        </Col>
+        <Col xs={4} className="text-right"></Col>
       </Row>
     </Container>
   </StyledFooter>
