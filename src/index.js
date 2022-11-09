@@ -2,22 +2,35 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import store from './store'
 import ThemeProvider, { ThemedGlobalStyle } from './theme/ThemeProvider'
 import * as serviceWorker from './serviceWorker'
 
 import App from './components/App'
+import Check from './components/pages/Check'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'react-toastify/dist/ReactToastify.css'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+  },
+  {
+    path: 'check',
+    element: <Check />,
+  },
+])
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider>
         <ThemedGlobalStyle />
-        <App />
+        <RouterProvider router={router} />
         <ToastContainer />
       </ThemeProvider>
     </Provider>

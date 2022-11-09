@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 const ConnectButton = styled.button`
-  width: auto;
+  width: 100%;
   color: white;
   border-radius: 3px;
   font-size: 15px;
   font-weight: 300;
-  height: 40px;
+  height: 50px;
   border: 0;
   padding-left: 25px;
   padding-right: 25px;

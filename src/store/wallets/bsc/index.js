@@ -25,7 +25,7 @@ const connectWithBscWallet = async (_dispatch) => {
           options: {
             network: 'binance',
             rpc: {
-              56: settings.rpc.mainnet.bsc.endpoint,
+              56: settings.rpc.bsc.endpoint,
             },
           },
         },
@@ -83,7 +83,7 @@ const _connectionSuccesfull = async (_provider, _dispatch) => {
           symbol: 'bnb',
           decimals: 18,
         },
-        nodes: [settings.rpc.mainnet.bsc.endpoint],
+        nodes: [settings.rpc.bsc.endpoint],
         blockExplorerUrls: [settings.explorers.mainnet.bsc],
       })
 

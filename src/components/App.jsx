@@ -12,6 +12,7 @@ import settings from '../settings'
 
 import Button from '../components/base/Button'
 import Header from './base/Header'
+import Footer from './base/Footer'
 
 const TermsAndConditions = styled(Col)`
   height: 400px;
@@ -44,15 +45,6 @@ const StyledFormCheckInput = styled(Form.Check.Input)`
   border: 1px solid ${({ theme }) => theme.lightGray};
   background: red;
   cursor: pointer;
-`
-
-const ConnectButton = styled(Button)`
-  width: 100%;
-  height: 50px;
-`
-
-const Content = styled.div`
-  padding-bottom: 100px;
 `
 
 const Iframe = styled.iframe`
@@ -160,55 +152,54 @@ const App = () => {
   return (
     <Fragment>
       <Header />
-      <Content>
-        <Container>
-          <Row className="mt-4">
-            <Col className="mx-auto text-center" xs={12}>
-              <Title>pGALA Recovery plan Enrollment Platform</Title>
-            </Col>
-          </Row>
-          <Row className="mt-2">
-            <Col className="mx-auto text-center" xs={12} lg={6}>
-              <SubTitle>
-                In order to enroll in the recovery plan please read the declaration below (also available{' '}
-                <a href={settings.terms} target="_blank" rel="noreferrer">
-                  here
-                </a>
-                ) and accept it by signing it with the wallet you want to enroll with.
-              </SubTitle>
-            </Col>
-          </Row>
-          <Row className="mt-4">
-            <TermsAndConditions className="mx-auto" xs={12} lg={8}>
-              <Iframe src={settings.terms} id="frame" />
-            </TermsAndConditions>
-          </Row>
-          <Row className="mt-2">
-            <Col className="mx-auto text-center" xs={12}>
-              <Form>
-                <Form.Check type={'checkbox'} id={`check-tos`}>
-                  <StyledFormCheckInput type={'checkbox'} onChange={() => setChecked(!checked)} />
-                  <StyledFormCheckLabel>Accept</StyledFormCheckLabel>
-                </Form.Check>
-              </Form>
-            </Col>
-          </Row>
+      <Container>
+        <Row className="mt-4">
+          <Col className="mx-auto text-center" xs={12}>
+            <Title>pGALA Recovery plan Enrollment Platform</Title>
+          </Col>
+        </Row>
+        <Row className="mt-2">
+          <Col className="mx-auto text-center" xs={12} lg={6}>
+            <SubTitle>
+              In order to enroll in the recovery plan please read the declaration below (also available{' '}
+              <a href={settings.terms} target="_blank" rel="noreferrer">
+                here
+              </a>
+              ) and accept it by signing it with the wallet you want to enroll with.
+            </SubTitle>
+          </Col>
+        </Row>
+        <Row className="mt-4">
+          <TermsAndConditions className="mx-auto" xs={12} lg={8}>
+            <Iframe src={settings.terms} id="frame" />
+          </TermsAndConditions>
+        </Row>
+        <Row className="mt-2">
+          <Col className="mx-auto text-center" xs={12}>
+            <Form>
+              <Form.Check type={'checkbox'} id={`check-tos`}>
+                <StyledFormCheckInput type={'checkbox'} onChange={() => setChecked(!checked)} />
+                <StyledFormCheckLabel>Accept</StyledFormCheckLabel>
+              </Form.Check>
+            </Form>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="mt-5 mx-auto" xs={12} lg={6}>
+            <Button disabled={btnDisabled} onClick={() => (isConnected ? onConfirm() : connect())}>
+              {btnText}
+            </Button>
+          </Col>
+        </Row>
+        {isConnected && (
           <Row>
-            <Col className="mt-5 mx-auto" xs={12} lg={6}>
-              <ConnectButton disabled={btnDisabled} onClick={() => (isConnected ? onConfirm() : connect())}>
-                {btnText}
-              </ConnectButton>
+            <Col className="mt-3 d-flex justify-content-center mx-auto" xs={12} lg={6}>
+              <AddTokenSpan onClick={onAddToken}>Add pGALA to your wallet</AddTokenSpan>
             </Col>
           </Row>
-          {isConnected && (
-            <Row>
-              <Col className="mt-3 d-flex justify-content-center mx-auto" xs={12} lg={6}>
-                <AddTokenSpan onClick={onAddToken}>Add pGALA to your wallet</AddTokenSpan>
-              </Col>
-            </Row>
-          )}
-        </Container>
-      </Content>
+        )}
+      </Container>
+      <Footer withCheck />
     </Fragment>
   )
 }

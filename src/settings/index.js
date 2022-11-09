@@ -2,10 +2,8 @@ const settings = {
   termsMultiHash: '',
   terms: 'https://ipfs.io/ipfs/',
   rpc: {
-    mainnet: {
-      bsc: {
-        endpoint: process.env.REACT_APP_BSC_NODE,
-      },
+    bsc: {
+      endpoint: process.env.REACT_APP_BSC_NODE,
     },
   },
   explorers: {

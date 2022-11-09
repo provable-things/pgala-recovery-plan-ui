@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Navbar, Container, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import { useWalletByBlockchain } from '../../../hooks/use-wallets'
 
@@ -50,7 +51,9 @@ const Header = (_props) => {
         <Container>
           <Navbar.Brand>
             {' '}
-            <Logo src="../assets/svg/PNT.svg" />
+            <Link to={'/'}>
+              <Logo src="../assets/svg/PNT.svg" />
+            </Link>
           </Navbar.Brand>
           {isConnected ? (
             <ContainerOptions>
