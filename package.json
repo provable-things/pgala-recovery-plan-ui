@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "HTTPS=true && react-scripts start",
-    "format": "prettier --config ./.prettierrc --write  \"./src/**/*.+(js|json|jsx)\" \"./scripts/*\"",
+    "format": "prettier --config ./.prettierrc --write  \"./*/**/*.+(js|json|jsx)\"",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "analyze:bundle": "node ./scripts/bundle-analyzer.js",
     "build-and-deploy": "npm run build && npm run deploy",

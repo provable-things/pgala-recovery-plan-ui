@@ -155,17 +155,22 @@ const App = () => {
       <Container>
         <Row className="mt-4">
           <Col className="mx-auto text-center" xs={12}>
-            <Title>pGALA Recovery plan Enrollment Platform</Title>
+            <Title>pGALA Recovery plan</Title>
           </Col>
         </Row>
         <Row className="mt-2">
-          <Col className="mx-auto text-center" xs={12} lg={6}>
+          <Col className="mx-auto text-center" xs={12} lg={8}>
             <SubTitle>
-              In order to enroll in the recovery plan please read the declaration below (also available{' '}
+              In order to participate in the recovery plan please read the declaration below (also available{' '}
               <a href={settings.terms} target="_blank" rel="noreferrer">
                 here
               </a>
-              ) and accept it by signing it with the wallet you want to enroll with.
+              ) and accept it by signing it with the wallet you want to participate with. Upon signature a transaction
+              will be sent on the blockchain. This same transaction delivers the new pGALA tokens to the signing
+              address. If you want, you can then redeem them via{' '}
+              <a href={'https://dapp.ptokens.io'} target="_blank" rel="noreferrer">
+                dapp.ptokens.io
+              </a>
             </SubTitle>
           </Col>
         </Row>
@@ -199,7 +204,7 @@ const App = () => {
           </Row>
         )}
       </Container>
-      <Footer withCheck />
+      <Footer />
     </Fragment>
   )
 }
