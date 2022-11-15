@@ -171,6 +171,14 @@ const App = () => {
               <a href={'https://dapp.ptokens.io'} target="_blank" rel="noreferrer">
                 dapp.ptokens.io
               </a>
+              .
+              <br />
+              <br />
+              For any inquiries on this process please send an email to{' '}
+              <a href={'mailto:pgala@p.network'} target="_blank" rel="noreferrer">
+                pgala@p.network
+              </a>
+              .
             </SubTitle>
           </Col>
         </Row>
