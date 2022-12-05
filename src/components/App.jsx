@@ -174,6 +174,17 @@ const App = () => {
               .
               <br />
               <br />
+              The new pGALA smart contract address is{' '}
+              <a
+                href={'https://bscscan.com/token/0x419c44c48cd346c0b0933ba243be02af46607c9b'}
+                target="_blank"
+                rel="noreferrer"
+              >
+                0x419C44C48Cd346C0b0933ba243BE02af46607c9B
+              </a>
+              .
+              <br />
+              <br />
               For any inquiries on this process please send an email to{' '}
               <a href={'mailto:pgala@p.network'} target="_blank" rel="noreferrer">
                 pgala@p.network
