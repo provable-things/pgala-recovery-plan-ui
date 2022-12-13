@@ -10,14 +10,19 @@ import * as serviceWorker from './serviceWorker'
 
 import App from './components/App'
 import Check from './components/pages/Check'
+import Faqs from './components/pages/Faqs'
 
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-toastify/dist/ReactToastify.css'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+  },
+  {
+    path: '/faqs',
+    element: <Faqs />,
   },
   {
     path: 'check',

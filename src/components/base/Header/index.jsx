@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Navbar, Container, Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { useWalletByBlockchain } from '../../../hooks/use-wallets'
 
@@ -13,6 +13,7 @@ const ConnectButton = styled(Button)``
 const Logo = styled.img`
   width: 40px;
   height: 40px;
+  margin-right: 15px;
 `
 
 const ContainerOptions = styled.div`
@@ -40,10 +41,23 @@ const ContainerBottomMobile = styled(Container)`
   }
 `
 
+const StyledLink = styled(Link)`
+  font-size: 18px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: ${({ active, theme }) => (active === 'true' ? theme.text1 : theme.text3)} !important;
+  @media (max-width: 991.98px) {
+    margin-left: 10px;
+    font-size: 17px;
+  }
+  text-decoration: none;
+`
+
 const Header = (_props) => {
   const [showWalletInfo, setShowWalletInfo] = useState(false)
   const wallet = useWalletByBlockchain('BSC')
   const { isConnected, formattedAccount, connect } = wallet
+  const { pathname } = useLocation()
 
   return (
     <React.Fragment>
@@ -54,6 +68,12 @@ const Header = (_props) => {
             <Link to={'/'}>
               <Logo src="../assets/svg/PNT.svg" />
             </Link>
+            <StyledLink to={'/'} active={(pathname === '/').toString()}>
+              Home
+            </StyledLink>
+            <StyledLink to={'/faqs'} active={pathname.includes('faqs').toString()}>
+              FAQs
+            </StyledLink>
           </Navbar.Brand>
           {isConnected ? (
             <ContainerOptions>

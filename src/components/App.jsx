@@ -43,7 +43,6 @@ const StyledFormCheckInput = styled(Form.Check.Input)`
   height: 20px;
   width: 20px;
   border: 1px solid ${({ theme }) => theme.lightGray};
-  background: red;
   cursor: pointer;
 `
 
