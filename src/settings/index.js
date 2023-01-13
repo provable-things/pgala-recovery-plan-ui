@@ -1,6 +1,6 @@
 const settings = {
   termsMultiHash: 'QmShGLRoEDbghUWBux6ndGTiBkeoKBrXdR1y1HPGsdkDyv',
-  terms: 'https://ipfs.io/ipfs/QmShGLRoEDbghUWBux6ndGTiBkeoKBrXdR1y1HPGsdkDyv',
+  terms: 'https://cf-ipfs.com/ipfs/QmShGLRoEDbghUWBux6ndGTiBkeoKBrXdR1y1HPGsdkDyv',
   rpc: {
     bsc: {
       endpoint: process.env.REACT_APP_BSC_NODE,
