@@ -287,6 +287,10 @@ const Faqs = () => {
                     pNetwork is in touch with the involved decentralized exchanges in order to assure that the new pGALA
                     tokens will be distributed to their users. Please reach out to them to find out more details on how
                     they intend to proceed with the redistribution of pGALA tokens.
+                    <br /> <br />
+                    Update of 15th February 2023: Biswap has made eligible Biswap's pGALA LP providers able to claim
+                    their share of new pGALA tokens via a customized solution. More details{' '}
+                    <a href="https://twitter.com/Biswap_Dex/status/1625781974223958016?s=20">here</a>
                   </AccordionBodyTextSpan>
                 </Accordion.Body>
               </Accordion.Item>
