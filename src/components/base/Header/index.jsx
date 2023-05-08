@@ -66,7 +66,7 @@ const Header = (_props) => {
           <Navbar.Brand>
             {' '}
             <Link to={'/'}>
-              <Logo src="../assets/svg/PNT.svg" />
+              <Logo src="./assets/svg/PNT.svg" />
             </Link>
             <StyledLink to={'/'} active={(pathname === '/').toString()}>
               Home

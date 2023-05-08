@@ -85,7 +85,7 @@ const WalletInfoModal = ({ show, wallets, onClose }) => {
             <ContainerAccountInfo key={`${blockchain}-wallet`}>
               <Row>
                 <Col xs={6} className="my-auto">
-                  <BlockchainImage src={`../assets/svg/${blockchain}.svg`} data-tip={formattedBlockchain} />
+                  <BlockchainImage src={`./assets/svg/${blockchain}.svg`} data-tip={formattedBlockchain} />
                   <Account>{formattedAccount}</Account>
                 </Col>
                 <Col xs={6} className="my-auto text-right">
