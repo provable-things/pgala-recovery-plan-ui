@@ -1,6 +1,6 @@
 import Web3 from 'web3'
 import Web3Modal from 'web3modal'
-import WalletConnectProvider from '@walletconnect/web3-provider'
+import EthereumProvider from '@walletconnect/ethereum-provider'
 import BigNumber from 'bignumber.js'
 
 import { WALLET_BSC_CONNECTED, WALLET_BSC_DISCONNECTED, WALLET_BSC_ACCOUNT_CHANGED } from '../../../constants'
@@ -11,6 +11,19 @@ import { getWalletProviderByBlockchain } from '../wallets.selectors'
 
 let web3Modal
 
+const walletConnectV2Connector = async (_package) => {
+  const provider = await _package.init({
+    projectId: process.env.REACT_APP_WC2_PROJECT_ID,
+    chains: [56],
+    showQrModal: true,
+    methods: ['eth_sendTransaction', 'eth_signTransaction', 'eth_sign', 'personal_sign', 'eth_signTypedData'],
+    events: ['chainChanged', 'accountsChanged'],
+  })
+
+  await provider.connect()
+  return provider
+}
+
 const connectWithBscWallet = async (_dispatch) => {
   try {
     if (document.getElementById('WEB3_CONNECT_MODAL_ID')) {
@@ -20,14 +33,17 @@ const connectWithBscWallet = async (_dispatch) => {
     web3Modal = new Web3Modal({
       theme: getWeb3ModalTheme('light'),
       providerOptions: {
-        walletconnect: {
-          package: WalletConnectProvider,
-          options: {
-            network: 'binance',
-            rpc: {
-              56: settings.rpc.bsc.endpoint,
-            },
+        'custom-walletconnectv2': {
+          display: {
+            logo: './assets/png/wc2.png',
+            name: 'WalletConnect V2',
+            description: 'Connect through WalletConnect V2',
           },
+          options: {
+            showQrModal: true,
+          },
+          package: EthereumProvider,
+          connector: walletConnectV2Connector,
         },
       },
     })
@@ -38,8 +54,8 @@ const connectWithBscWallet = async (_dispatch) => {
     })
 
     /*provider.on('chainChanged', _chainId => {
-      if (Number(_chainId) !== 56) {
-        toastr.error('Invalid Binance Smart Chain Network. Please use chainId = 56')
+      if (Number(_chainId) !== settings.rpc.mainnet.bsc.chainId) {
+        toastr.error('Invalid Binance Smart Chain Network. Please use chainId = settings.rpc.mainnet.bsc.chainId')
         return
       }
     })*/

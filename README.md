@@ -40,6 +40,7 @@ Create an __`.env`__ file containing the following values:
 
 ```
 REACT_APP_BSC_NODE=
+REACT_APP_WC2_PROJECT_ID=
 ```
 
 Start __`pgala-recovery-plan-ui`__ via:

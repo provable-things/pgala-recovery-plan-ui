@@ -1,3 +1,6 @@
+/* eslint-disable import/first */
+window.Buffer = require('buffer/').Buffer
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
