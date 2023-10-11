@@ -97,7 +97,7 @@ const Header = (_props) => {
             </StyledLink>
             <span>
               <StyledA href={settings.pGalaStep1ClaimUrl} target="_blank" rel="noreferrer">
-                Part one
+                Part One
                 <StyledIcon />
               </StyledA>
             </span>
