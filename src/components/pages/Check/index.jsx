@@ -83,7 +83,7 @@ const Check = () => {
         <Container>
           <Row className="mt-4">
             <Col className="mx-auto text-center" xs={12}>
-              <Title>Check address details</Title>
+              <Title>Check address eligibility</Title>
             </Col>
           </Row>
           <Row className="mt-5">
@@ -103,13 +103,13 @@ const Check = () => {
               <Row className="mt-5 ">
                 <Col className="d-flex justify-content-between mx-auto text-center" xs={6}>
                   <DetailLabel>Claimable</DetailLabel>
-                  <DetailValue>{details?.claimableAmount} pGALA</DetailValue>
+                  <DetailValue>{details?.claimableAmount} BNB</DetailValue>
                 </Col>
               </Row>
               <Row className="mt-2">
                 <Col className="d-flex justify-content-between mx-auto text-center" xs={6}>
                   <DetailLabel>Already Claimed</DetailLabel>
-                  <DetailValue>{details?.claimedAmount} pGALA</DetailValue>
+                  <DetailValue>{details?.claimedAmount} BNB</DetailValue>
                 </Col>
               </Row>
             </React.Fragment>

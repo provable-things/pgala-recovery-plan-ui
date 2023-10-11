@@ -27,7 +27,7 @@ const Footer = () => (
       <Row>
         <Col xs={4} />
         <Col xs={4} className="text-center">
-          <StyledLink to={'/check'}>Check address details</StyledLink>
+          <StyledLink to={'/check'}>Check address eligibility</StyledLink>
         </Col>
         <Col xs={4} className="text-right"></Col>
       </Row>

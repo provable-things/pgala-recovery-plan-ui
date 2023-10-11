@@ -4,10 +4,10 @@ import Web3 from 'web3'
 import { Container, Row, Col, Form } from 'react-bootstrap'
 import { toast } from 'react-toastify'
 import BigNumber from 'bignumber.js'
+import { Link } from 'react-router-dom'
 
 import { useWalletByBlockchain } from '../hooks/use-wallets'
 import AgreementAbi from '../utils/abi/Agreement.json'
-import { registerToken } from '../utils/wallet'
 import settings from '../settings'
 
 import Button from '../components/base/Button'
@@ -51,14 +51,6 @@ const Iframe = styled.iframe`
   height: 100%;
   border: 1px solid ${({ theme }) => theme.lightGray};
   border-radius: 5px;
-`
-
-const AddTokenSpan = styled.span`
-  width: 100%;
-  text-align: center;
-  color: #007bff;
-  cursor: pointer;
-  font-size: 13px;
 `
 
 const App = () => {
@@ -120,7 +112,7 @@ const App = () => {
       isConnected
         ? BigNumber(claimable).isEqualTo(0)
           ? 'Nothing to claim'
-          : `Accept and Claim ${claimable ? claimable : '-'} pGALA`
+          : `Accept and Claim ${claimable ? claimable : '-'} BNB`
         : 'Connect',
     [isConnected, claimable]
   )
@@ -134,57 +126,39 @@ const App = () => {
     return false
   }, [isConnected, claimable, checked])
 
-  const onAddToken = useCallback(async () => {
-    try {
-      await registerToken({
-        provider,
-        tokenAddress: '0x419C44C48Cd346C0b0933ba243BE02af46607c9B',
-        tokenSymbol: 'pGALA',
-        tokenDecimals: 18,
-        tokenImage: null,
-      })
-    } catch (_err) {
-      console.error(_err)
-    }
-  }, [provider])
-
   return (
     <Fragment>
       <Header />
       <Container>
         <Row className="mt-4">
           <Col className="mx-auto text-center" xs={12}>
-            <Title>pGALA Recovery plan</Title>
+            <Title>pGALA Recovery Plan - Phase Two: BNB redistribution</Title>
           </Col>
         </Row>
         <Row className="mt-2">
           <Col className="mx-auto text-center" xs={12} lg={8}>
             <SubTitle>
-              In order to participate in the recovery plan please read the declaration below (also available{' '}
+              The Second Part of the pGALA Recovery Plan involves the redistribution of the 12,977 BNB tokens recovered
+              after the pGALA incident on 3 November 2022. These BNB tokens recovered through the white-hat operation,
+              have been assigned to users in proportion to their eligible pGALA holdings at the time of the second
+              snapshot (S2), as described in our post-mortem article (0.00000109 BNB for each uncollateralized pGALA).
+              <br />
+              <br />
+              On 2 July 2023, the Swiss judicial authorities concluded that there are no elements to support the
+              continuation of a criminal procedure. On 2 October 2023, the authorities returned the recovered BNB tokens
+              to us, with the obligation to return them to uncollateralized pGALA holders in accordance with the
+              recovery plan published last year.
+              <br />
+              <br />
+              To claim your share of the recovered BNB, please review and accept the declaration below (also available{' '}
               <a href={settings.terms} target="_blank" rel="noreferrer">
                 here
               </a>
-              ) and accept it by signing it with the wallet you want to participate with. Upon signature a transaction
-              will be sent on the blockchain. This same transaction delivers the new pGALA tokens to the signing
-              address. If you want, you can then redeem them via{' '}
-              <a href={'https://dapp.ptokens.io'} target="_blank" rel="noreferrer">
-                dapp.ptokens.io
-              </a>
-              .
+              ). Sign it using the wallet you wish to participate with. Once signed, a blockchain transaction will be
+              initiated to credit your wallet with the BNB tokens to which you are entitled.
               <br />
-              <br />
-              The new pGALA smart contract address is{' '}
-              <a
-                href={'https://bscscan.com/token/0x419c44c48cd346c0b0933ba243be02af46607c9b'}
-                target="_blank"
-                rel="noreferrer"
-              >
-                0x419C44C48Cd346C0b0933ba243BE02af46607c9B
-              </a>
-              .
-              <br />
-              <br />
-              For any inquiries on this process please send an email to{' '}
+              <br /> If you have any further questions, please refer to our <Link to="/faqs">FAQs</Link> or contact us
+              at{' '}
               <a href={'mailto:pgala@p.network'} target="_blank" rel="noreferrer">
                 pgala@p.network
               </a>
@@ -214,13 +188,6 @@ const App = () => {
             </Button>
           </Col>
         </Row>
-        {isConnected && (
-          <Row>
-            <Col className="mt-3 d-flex justify-content-center mx-auto" xs={12} lg={6}>
-              <AddTokenSpan onClick={onAddToken}>Add pGALA to your wallet</AddTokenSpan>
-            </Col>
-          </Row>
-        )}
       </Container>
       <Footer />
     </Fragment>

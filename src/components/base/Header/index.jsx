@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Navbar, Container, Row, Col } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
+import { RiArrowLeftSLine } from 'react-icons/ri'
 
 import { useWalletByBlockchain } from '../../../hooks/use-wallets'
 
 import Button from '../Button'
 import WalletInfoModal from '../WalletInfoModal'
+import settings from '../../../settings'
 
 const ConnectButton = styled(Button)``
 
@@ -53,6 +55,25 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `
 
+const StyledA = styled.a`
+  font-size: 18px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: ${({ active, theme }) => theme.text3} !important;
+  @media (max-width: 991.98px) {
+    margin-left: 10px;
+    font-size: 17px;
+  }
+  text-decoration: none;
+`
+
+const StyledIcon = styled(RiArrowLeftSLine)`
+  position: relative;
+  transform: rotate(135deg);
+  bottom: 10px;
+  right: 3px;
+`
+
 const Header = (_props) => {
   const [showWalletInfo, setShowWalletInfo] = useState(false)
   const wallet = useWalletByBlockchain('BSC')
@@ -74,6 +95,12 @@ const Header = (_props) => {
             <StyledLink to={'/faqs'} active={pathname.includes('faqs').toString()}>
               FAQs
             </StyledLink>
+            <span>
+              <StyledA href={settings.pGalaStep1ClaimUrl} target="_blank" rel="noreferrer">
+                Part one
+                <StyledIcon />
+              </StyledA>
+            </span>
           </Navbar.Brand>
           {isConnected ? (
             <ContainerOptions>
