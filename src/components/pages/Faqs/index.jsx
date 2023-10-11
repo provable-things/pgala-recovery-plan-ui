@@ -420,7 +420,7 @@ const Faqs = () => {
               <Accordion.Item eventKey="15">
                 <Accordion.Header>
                   <AccordionHeaderText>
-                    Q16 - I bought pGALA from a CEX/DEX. How did pGala got listed?
+                    Q16 - I bought pGALA from a CEX/DEX. How did pGala get listed?
                   </AccordionHeaderText>
                 </Accordion.Header>
                 <Accordion.Body>
@@ -468,21 +468,20 @@ const Faqs = () => {
                       #22844900
                     </a>
                     . The amount of the BNB redistribution is calculated based on the number of pGALA at the time of S2,
-                    eventually excluding those pGALA tokens already compensated with the First Part of the Recovery
-                    Plan.
+                    excluding those pGALA tokens already compensated with the First Part of the Recovery Plan.
                   </AccordionBodyTextSpan>
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="17">
                 <Accordion.Header>
                   <AccordionHeaderText>
-                    Q18 - What is the ratio between the BNB redistribution and the number of unsecured pGALAs?
+                    Q18 - What is the ratio between the BNB redistribution and the number of uncollateralized pGALAs?
                   </AccordionHeaderText>
                 </Accordion.Header>
                 <Accordion.Body>
                   <AccordionBodyTextSpan>
-                    The ratio BNB/pGALA at the time of the pGALA problem was approximately 0.00000109 BNB (0.00000109
-                    BNB for each uncollateralised pGALA).
+                    Redistributing all the recovered BNB tokens across all the uncollateralised pGALA tokens at S2
+                    results in a BNB/pGALA ratio of 0.00000109 BNB (0.00000109 BNB for each uncollateralised pGALA).
                   </AccordionBodyTextSpan>
                 </Accordion.Body>
               </Accordion.Item>
@@ -505,8 +504,13 @@ const Faqs = () => {
                       here
                     </a>
                     . <br />
-                    - Connect your wallet. <br />- Expand <b>acceptAndClaim</b>. <br />- Insert{' '}
-                    <b>{settings.termsMultiHash}</b> within <b>ipfsMultihash</b> text input. <br />
+                    - Connect your wallet. <br />- Expand <b>acceptAndClaim</b>. <br />- If you agree with the
+                    agreeement{' '}
+                    <a href={settings.terms} target="_blank" rel="noreferrer">
+                      here
+                    </a>{' '}
+                    you can proceed inserting <b>{settings.termsMultiHash}</b> within the <b>ipfsMultihash</b> text
+                    input. <br />
                     - Click write. <br />
                   </AccordionBodyTextSpan>
                 </Accordion.Body>
@@ -523,8 +527,8 @@ const Faqs = () => {
                     <a target="_blank" rel="noreferrer" href=" https://bscscan.com/block/22844900">
                       #22844900
                     </a>
-                    , these tokens are NOT included in the recovery plan and your address is not eligible to claim the
-                    new pGALA or the BNB.
+                    , these tokens are NOT included in the recovery plan and your address is not eligible to claim
+                    neither the new pGALA nor the BNB.
                   </AccordionBodyTextSpan>
                 </Accordion.Body>
               </Accordion.Item>
@@ -549,7 +553,7 @@ const Faqs = () => {
                     . The distribution methods and distribution time are under the entire control of the involved
                     exchange itself. Users that have their pGALA on centralized exchanges should be instructed by their
                     exchange. pNetwork remains at disposal in providing support for exchanges that might require it;
-                    pNetwork can be reached by email for pGALA concerning requests at.
+                    pNetwork can be reached by email for pGALA concerning requests at
                     <a href={'mailto:pgala@p.network'} target="_blank" rel="noreferrer">
                       pgala@p.network
                     </a>

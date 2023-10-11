@@ -154,8 +154,8 @@ const App = () => {
               <a href={settings.terms} target="_blank" rel="noreferrer">
                 here
               </a>
-              ). Sign it using the wallet you wish to participate with. Once signed, a blockchain transaction will be
-              initiated to credit your wallet with the BNB tokens to which you are entitled.
+              ). Sign it using your eligible wallet. Once signed, a blockchain transaction will be initiated to credit
+              your wallet with the BNB tokens to which you are entitled.
               <br />
               <br /> If you have any further questions, please refer to our <Link to="/faqs">FAQs</Link> or contact us
               at{' '}
