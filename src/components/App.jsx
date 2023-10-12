@@ -154,7 +154,7 @@ const App = () => {
       <Container>
         <Row className="mt-4">
           <Col className="mx-auto text-center" xs={12}>
-            <Title>pGALA Recovery plan</Title>
+            <Title>pGALA Recovery Plan - Part One</Title>
           </Col>
         </Row>
         <Row className="mt-2">
